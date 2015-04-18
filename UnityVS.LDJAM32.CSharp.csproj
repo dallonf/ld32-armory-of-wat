@@ -62,12 +62,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BulletController.cs" />
-    <Compile Include="Assets\ClickToLaunch.cs" />
     <Compile Include="Assets\Extensions.cs" />
-    <Compile Include="Assets\MetaGunController.cs" />
-    <Compile Include="Assets\PlayerAim.cs" />
-    <Compile Include="Assets\PlayerMovement.cs" />
+    <Compile Include="Assets\Player\PlayerAim.cs" />
+    <Compile Include="Assets\Player\PlayerHealth.cs" />
+    <Compile Include="Assets\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Weapons\BulletController.cs" />
+    <Compile Include="Assets\Weapons\ClickToLaunch.cs" />
+    <Compile Include="Assets\Weapons\MetaGunController.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2013\UnityVS.CSharp.targets" />
 </Project>

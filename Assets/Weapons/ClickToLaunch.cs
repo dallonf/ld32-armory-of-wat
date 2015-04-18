@@ -23,7 +23,7 @@ public class ClickToLaunch : MonoBehaviour
             var instance = (Rigidbody2D)GameObject.Instantiate(LaunchPrefab, LaunchPoint.position, LaunchPoint.rotation);
             instance.AddForce(LaunchForce * LaunchPoint.right);
 
-            float rotation = Random.RandomRange(MinRotation, MaxRotation);
+            float rotation = Random.Range(MinRotation, MaxRotation);
             if (Random.value > 0.5)
             {
                 rotation *= -1;

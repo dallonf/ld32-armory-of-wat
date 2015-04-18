@@ -23,7 +23,9 @@ public class MetaGunController : MonoBehaviour
         yield return new WaitForSeconds(DelayToFire);
         for (int i = 0; i < ShotsToFire; i++)
         {
-            GameObject.Instantiate(BulletPrefab, LaunchPoint.position, LaunchPoint.rotation);
+            var bullet = (GameObject)GameObject.Instantiate(BulletPrefab, LaunchPoint.position, LaunchPoint.rotation);
+            Physics2D.IgnoreCollision(bullet.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
+            
             yield return new WaitForSeconds(DelayBetweenShots);
         }
         yield return new WaitForSeconds(TimeAfterFire);

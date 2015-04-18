@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BulletController : MonoBehaviour
 {
-
+    public int Damage = 40;
     public float Speed = 30f;
     public float TTL = 2;
 
@@ -13,11 +13,13 @@ public class BulletController : MonoBehaviour
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
         Destroy(gameObject, TTL);
+        rigidbody2d.velocity = transform.right * Speed;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        rigidbody2d.MovePosition(transform.position + transform.right * Speed * Time.deltaTime);
+        collision.gameObject.SendMessage("TakeDamage", Damage, SendMessageOptions.DontRequireReceiver);
+        Destroy(gameObject);
     }
+
 }

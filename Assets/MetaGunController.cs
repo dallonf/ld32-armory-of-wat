@@ -9,9 +9,12 @@ public class MetaGunController : MonoBehaviour
     public float DelayBetweenShots = 0.25f;
     public float TimeAfterFire = 1;
 
+    public Transform LaunchPoint;
+
     // Use this for initialization
     void Start()
     {
+        LaunchPoint = transform.FindChild("launch-point");
         StartCoroutine(FireWeapon());
     }
 
@@ -20,7 +23,7 @@ public class MetaGunController : MonoBehaviour
         yield return new WaitForSeconds(DelayToFire);
         for (int i = 0; i < ShotsToFire; i++)
         {
-            Debug.Log("Shoot");
+            GameObject.Instantiate(BulletPrefab, LaunchPoint.position, LaunchPoint.rotation);
             yield return new WaitForSeconds(DelayBetweenShots);
         }
         yield return new WaitForSeconds(TimeAfterFire);

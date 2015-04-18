@@ -14,7 +14,6 @@ public class PlayerAim : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 mousePositionInWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.DrawLine(transform.position, mousePositionInWorld, Color.blue);
 
         var diff = mousePositionInWorld - (Vector2)GunPointer.position;
         if (diff.sqrMagnitude < MinTargetDistance * MinTargetDistance)
@@ -24,15 +23,6 @@ public class PlayerAim : MonoBehaviour
 
         var angle = AngleMath.VectorToAngle2D(diff);
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-    }
-
-    public void OnDrawGizmos()
-    {
-        if (GunPointer)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawRay(GunPointer.position, GunPointer.TransformDirection(Vector3.up) * 100);
-        }
     }
 
     public void OnDrawGizmosSelected()

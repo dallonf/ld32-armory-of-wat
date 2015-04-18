@@ -5,15 +5,35 @@ public class BotMovement : MonoBehaviour
 {
     public float Speed = 5;
 
-    // Use this for initialization
-    void Start()
-    {
+    private GroundDetector groundDetector;
+    private Rigidbody2D rigidbody2d;
 
+    void Awake()
+    {
+        groundDetector = GetComponent<GroundDetector>();
+        rigidbody2d = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        bool isOnGround = groundDetector.IsOnGround();
 
+        bool directionReversed = transform.localScale.x < 0;
+        
+        if (isOnGround)
+        {
+            var targetVelocity = new Vector2(Speed * (directionReversed ? -1 : 1), rigidbody2d.velocity.y);
+            rigidbody2d.velocity = targetVelocity;
+        }
+    }
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            var scale = transform.localScale;
+            scale.x *= -1;
+            transform.localScale = scale;
+        }
     }
 }

@@ -250,6 +250,7 @@ GameObject:
   - 212: {fileID: 1289208236}
   - 61: {fileID: 1289208235}
   - 50: {fileID: 1289208238}
+  - 114: {fileID: 1289208239}
   m_Layer: 0
   m_Name: player_tmp
   m_TagString: Untagged
@@ -323,3 +324,16 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+--- !u!114 &1289208239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289208234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e8a91f68f8d914aafb3b8bf85ac58f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 30
+  Deceleration: 5

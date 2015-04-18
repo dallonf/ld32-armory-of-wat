@@ -44,10 +44,10 @@ public class PlayerMovement : MonoBehaviour
         rigidbody2d.AddForce(new Vector2(horizontal * Speed, 0));
 
         // Decelerate for better control
-        //if (isOnGround && Mathf.Approximately(horizontal, 0))
-        //{
-        //    rigidbody2d.AddForce(new Vector2(rigidbody2d.velocity.x * -Deceleration, 0));
-        //}
+        if (isOnGround && Mathf.Approximately(horizontal, 0))
+        {
+            rigidbody2d.AddForce(new Vector2(rigidbody2d.velocity.x * -Deceleration, 0));
+        }
 
         bool jumpButton = Input.GetAxis("Vertical") > 0;
 

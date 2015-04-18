@@ -157,6 +157,8 @@ MonoBehaviour:
   LaunchPrefab: {fileID: 5020822, guid: 650e45b676e0eac4999312998aac8e19, type: 2}
   LaunchPoint: {fileID: 0}
   LaunchForce: 1000
+  MinRotation: 15
+  MaxRotation: 90
 --- !u!1 &500074049
 GameObject:
   m_ObjectHideFlags: 0

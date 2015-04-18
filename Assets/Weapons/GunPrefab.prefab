@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 141528, guid: 24b4cfa8d1e10864085cb6c9cc2ff7a0, type: 2}
   ShotsToFire: 3
-  DelayToFire: .25
+  DelayToFire: .5
   DelayBetweenShots: .25
   TimeAfterFire: 1
   LaunchPoint: {fileID: 0}

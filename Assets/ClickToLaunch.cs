@@ -7,6 +7,9 @@ public class ClickToLaunch : MonoBehaviour
     public Transform LaunchPoint;
     public float LaunchForce;
 
+    public float MinRotation = 30;
+    public float MaxRotation = 270;
+
     void Awake()
     {
         LaunchPoint = transform.FindChild("launch-point");
@@ -19,6 +22,14 @@ public class ClickToLaunch : MonoBehaviour
         {
             var instance = (Rigidbody2D)GameObject.Instantiate(LaunchPrefab, LaunchPoint.position, LaunchPoint.rotation);
             instance.AddForce(LaunchForce * LaunchPoint.right);
+
+            float rotation = Random.RandomRange(MinRotation, MaxRotation);
+            if (Random.value > 0.5)
+            {
+                rotation *= -1;
+            }
+
+            instance.AddTorque(rotation);
         }
     }
 }

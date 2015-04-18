@@ -337,3 +337,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 30
   Deceleration: 5
+  MaxJumpTime: .25
+  JumpForce: 75

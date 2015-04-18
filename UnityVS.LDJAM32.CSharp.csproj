@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\BoomBotAttack.cs" />
     <Compile Include="Assets\BotMovement.cs" />
+    <Compile Include="Assets\EnemiesDestroyedText.cs" />
     <Compile Include="Assets\Extensions.cs" />
     <Compile Include="Assets\GroundDetector.cs" />
     <Compile Include="Assets\ParticleSystemAutoDestroy.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="Assets\Player\PlayerHealth.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\PlayerHealthBar.cs" />
+    <Compile Include="Assets\ScoreManager.cs" />
+    <Compile Include="Assets\WaveManager.cs" />
     <Compile Include="Assets\Weapons\BulletController.cs" />
     <Compile Include="Assets\Weapons\ClickToLaunch.cs" />
     <Compile Include="Assets\Weapons\MetaGunController.cs" />

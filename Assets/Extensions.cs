@@ -18,3 +18,13 @@ public static class AngleMath
         return Mathf.Atan2(vector.y, vector.x) * Mathf.Rad2Deg;
     }
 }
+
+public static class PhysicsUtil
+{
+    public static void AddExplosionForce2D(Rigidbody2D rigidbody2d, float explosionForce, Vector3 explosionPosition, float explosionRadius)
+    {
+        var dir = (rigidbody2d.transform.position - explosionPosition);
+        float wearoff = 1 - (dir.magnitude / explosionRadius);
+        rigidbody2d.AddForce(dir.normalized * explosionForce * wearoff);
+    }
+}

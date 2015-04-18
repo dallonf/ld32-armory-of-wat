@@ -6,8 +6,6 @@ public class PlayerAim : MonoBehaviour
     public float MinTargetDistance = 1;
     public Transform GunPointer;
 
-    private float CurrentAngle = 0;
-
     void Awake()
     {
         GunPointer = transform.FindChild("gun-pointer");

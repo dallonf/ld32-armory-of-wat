@@ -97,8 +97,10 @@ GameObject:
   - 4: {fileID: 8465589}
   - 212: {fileID: 8465588}
   - 61: {fileID: 8465590}
+  - 114: {fileID: 8465591}
+  - 114: {fileID: 8465592}
   m_Layer: 0
-  m_Name: boom-bot
+  m_Name: BoomBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -137,7 +139,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 8465587}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.3500004, y: 5.21999979, z: 0}
+  m_LocalPosition: {x: 9.81999969, y: 5.15999985, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -155,6 +157,30 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 2.55999994, y: 2.55999994}
+--- !u!114 &8465591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8465587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a02e6d7e73a42840bd7469f4b202b98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 0
+--- !u!114 &8465592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8465587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bddcc449e841f4390c58d93357a7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: .100000001
 --- !u!1 &82418750
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +193,7 @@ GameObject:
   - 61: {fileID: 82418751}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +261,7 @@ GameObject:
   - 61: {fileID: 119869440}
   m_Layer: 0
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -576,7 +602,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1289208237}
-  m_RootOrder: 1
+  m_RootOrder: 0
 --- !u!212 &541914317
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -641,9 +667,9 @@ GameObject:
   - 212: {fileID: 783664470}
   - 251: {fileID: 783664469}
   - 61: {fileID: 783664468}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_tmp 2
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -670,7 +696,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -724,9 +750,9 @@ GameObject:
   - 212: {fileID: 869480374}
   - 251: {fileID: 869480373}
   - 61: {fileID: 869480372}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_tmp 3
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,7 +779,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -796,33 +822,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!1 &956886785
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 956886786}
-  m_Layer: 0
-  m_Name: feet
-  m_TagString: Untagged
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &956886786
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 956886785}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.33000004, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1289208237}
-  m_RootOrder: 0
 --- !u!1 &973595379
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,7 +878,7 @@ Transform:
   - {fileID: 528762212}
   - {fileID: 460062104}
   m_Father: {fileID: 1289208237}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &973595382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1181,6 +1180,7 @@ GameObject:
   - 50: {fileID: 1289208238}
   - 114: {fileID: 1289208239}
   - 114: {fileID: 1289208236}
+  - 114: {fileID: 1289208240}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1231,7 +1231,6 @@ Transform:
   m_LocalPosition: {x: 2.05999994, y: -6.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 956886786}
   - {fileID: 541914316}
   - {fileID: 973595381}
   m_Father: {fileID: 0}
@@ -1266,6 +1265,18 @@ MonoBehaviour:
   Deceleration: 5
   MaxJumpTime: .100000001
   JumpForce: 150
+--- !u!114 &1289208240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1289208234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7bddcc449e841f4390c58d93357a7dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Distance: .100000001
 --- !u!1 &1294534494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,9 +1445,9 @@ GameObject:
   - 212: {fileID: 1625865275}
   - 251: {fileID: 1625865274}
   - 61: {fileID: 1625865273}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_tmp 6
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1463,7 +1474,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -1517,9 +1528,9 @@ GameObject:
   - 212: {fileID: 1764997958}
   - 251: {fileID: 1764997957}
   - 61: {fileID: 1764997956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_tmp 5
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1546,7 +1557,7 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 4294966783
   m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -1600,9 +1611,9 @@ GameObject:
   - 212: {fileID: 1941827479}
   - 251: {fileID: 1941827478}
   - 61: {fileID: 1941827477}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ground_tmp 4
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1629,8 +1640,8 @@ PlatformEffector2D:
   m_Enabled: 1
   m_ColliderMask:
     serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseOneWay: 0
+    m_Bits: 4294966783
+  m_UseOneWay: 1
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideAngleVariance: 0

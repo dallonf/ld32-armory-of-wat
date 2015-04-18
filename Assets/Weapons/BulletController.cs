@@ -19,7 +19,11 @@ public class BulletController : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         collision.gameObject.SendMessage("TakeDamage", Damage, SendMessageOptions.DontRequireReceiver);
-        Destroy(gameObject);
+        if (!collision.gameObject.CompareTag("Platform"))
+        {
+            Destroy(gameObject);
+        }
+        
     }
 
 }

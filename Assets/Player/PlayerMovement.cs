@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(GroundDetector))]
 public class PlayerMovement : MonoBehaviour
 {
     enum JumpState
@@ -16,7 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public float JumpForce = 10;
 
     private Rigidbody2D rigidbody2d;
-    private Transform feet;
+    private GroundDetector groundDetector;
+
     private JumpState CurrentJumpState = JumpState.ON_GROUND;
 
     private float jumpTime = 0;
@@ -24,12 +26,12 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rigidbody2d = GetComponent<Rigidbody2D>();
-        feet = transform.FindChild("feet");
+        groundDetector = GetComponent<GroundDetector>();
     }
 
     void FixedUpdate()
     {
-        bool isOnGround = IsOnGround();
+        bool isOnGround = groundDetector.IsOnGround();
         if (isOnGround)
         {
             CurrentJumpState = JumpState.ON_GROUND;
@@ -69,10 +71,5 @@ public class PlayerMovement : MonoBehaviour
         {
             CurrentJumpState = JumpState.FALLING;
         }
-    }
-
-    protected bool IsOnGround()
-    {
-        return Physics2D.Linecast(transform.position, feet.position);
     }
 }

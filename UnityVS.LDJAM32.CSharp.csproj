@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Assets\ClickToLaunch.cs" />
     <Compile Include="Assets\Extensions.cs" />
+    <Compile Include="Assets\MetaGunController.cs" />
     <Compile Include="Assets\PlayerAim.cs" />
     <Compile Include="Assets\PlayerMovement.cs" />
   </ItemGroup>

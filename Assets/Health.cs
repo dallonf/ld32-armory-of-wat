@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerHealth : MonoBehaviour
+public class Health : MonoBehaviour
 {
     public int MaxHealth = 100;
-    public int Health;
+    public int CurrentHealth;
     public SpriteRenderer[] Sprites;
 
     private bool isInvulnerable = false;
@@ -14,22 +14,22 @@ public class PlayerHealth : MonoBehaviour
     public float FlashAlpha = 0.5f;
 
     public event System.Action OnTakeDamage;
+    public event System.Action OnDie;
 
     // Use this for initialization
     void Awake()
     {
-        Health = MaxHealth;
+        CurrentHealth = MaxHealth;
     }
 
     public void TakeDamage(int amount)
     {
         if (isInvulnerable) return;
-        Health -= amount;
+        CurrentHealth -= amount;
         if (OnTakeDamage != null) OnTakeDamage();
-        if (Health <= 0)
+        if (CurrentHealth <= 0)
         {
-            Health = 0;
-            Destroy(gameObject);
+            InstaDie();
         }
         else
         {
@@ -54,5 +54,12 @@ public class PlayerHealth : MonoBehaviour
             yield return new WaitForSeconds(FlashFrequency);
         }
         isInvulnerable = false;
+    }
+
+    public void InstaDie()
+    {
+        CurrentHealth = 0;
+        if (OnDie != null) OnDie();
+        Destroy(gameObject);
     }
 }

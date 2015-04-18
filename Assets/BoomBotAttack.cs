@@ -21,7 +21,9 @@ public class BoomBotAttack : MonoBehaviour
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        var playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj)
+            player = playerObj.transform;
     }
 
     // Update is called once per frame
@@ -51,14 +53,21 @@ public class BoomBotAttack : MonoBehaviour
         var caughtInExplosion = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius);
         foreach (var item in caughtInExplosion)
         {
-            item.SendMessage("TakeDamage", ExplosionDamage, SendMessageOptions.DontRequireReceiver);
-            var itemRigidbody = item.GetComponent<Rigidbody2D>();
-            if (itemRigidbody)
+            if (item != this.GetComponent<Collider2D>())
             {
-                PhysicsUtil.AddExplosionForce2D(itemRigidbody, ExplosionForce, transform.position, ExplosionRadius);
+                if (!item.CompareTag("Enemy"))
+                {
+                    item.SendMessage("TakeDamage", ExplosionDamage, SendMessageOptions.DontRequireReceiver);
+                }
+                var itemRigidbody = item.GetComponent<Rigidbody2D>();
+                if (itemRigidbody)
+                {
+                    itemRigidbody.AddForce(Vector2.up * 1, ForceMode2D.Impulse);
+                    PhysicsUtil.AddExplosionForce2D(itemRigidbody, ExplosionForce, transform.position, ExplosionRadius);
+                }
             }
         }
-        Destroy(gameObject);
+        this.SendMessage("InstaDie");
     }
 
     public void OnDrawGizmosSelected()

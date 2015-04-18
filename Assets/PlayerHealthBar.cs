@@ -4,12 +4,12 @@ using UnityEngine.UI;
 
 public class PlayerHealthBar : MonoBehaviour
 {
-    public PlayerHealth PlayerHealth;
+    public Health PlayerHealth;
     public Slider Slider;
 
     public void Awake()
     {
-        PlayerHealth = FindObjectOfType<PlayerHealth>();
+        PlayerHealth = FindObjectOfType<Health>();
         Slider = GetComponent<Slider>();
     }
 
@@ -17,7 +17,7 @@ public class PlayerHealthBar : MonoBehaviour
     {
         if (PlayerHealth)
         {
-            Slider.value = (float)PlayerHealth.Health / PlayerHealth.MaxHealth;
+            Slider.value = (float)PlayerHealth.CurrentHealth / PlayerHealth.MaxHealth;
         }
         else
         {

@@ -25,11 +25,17 @@ public class WeaponSelector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < keys.Length; i++)
+        int score = ScoreManager.Instance.EnemiesDestroyed;
+        for (int i = 0; i < ScoreToUnlock.Length; i++)
         {
-            if (Input.GetKeyDown(keys[i]))
+            if (score >= ScoreToUnlock[i])
             {
-                SelectWeapon(i);
+                weaponIcons[i].transform.FindChild("padlock").GetComponent<Image>().enabled = false;
+                weaponIcons[i].transform.FindChild("weapon-img").GetComponent<Image>().enabled = true;
+                if (Input.GetKeyDown(keys[i]))
+                {
+                    SelectWeapon(i);
+                }
             }
         }
     }

@@ -1577,6 +1577,7 @@ MonoBehaviour:
   - {fileID: 973595380}
   - {fileID: 460062103}
   HurtSound: {fileID: 8300000, guid: 28216be0be799e943b5e770a079cff60, type: 3}
+  DeadPrefab: {fileID: 0}
   FlashTimes: 5
   FlashFrequency: .100000001
   FlashAlpha: .5

@@ -285,6 +285,7 @@ MonoBehaviour:
   Sprites:
   - {fileID: 21298166}
   HurtSound: {fileID: 0}
+  DeadPrefab: {fileID: 132200, guid: a5ada25bb3522c64980fcbaf34bb9914, type: 2}
   FlashTimes: 5
   FlashFrequency: .100000001
   FlashAlpha: .5

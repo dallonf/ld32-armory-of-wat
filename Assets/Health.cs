@@ -7,6 +7,7 @@ public class Health : MonoBehaviour
     public int CurrentHealth;
     public SpriteRenderer[] Sprites;
     public AudioClip HurtSound;
+    public GameObject DeadPrefab;
 
     private bool isInvulnerable = false;
 
@@ -69,5 +70,9 @@ public class Health : MonoBehaviour
         CurrentHealth = 0;
         if (OnDie != null) OnDie();
         Destroy(gameObject);
+        if (DeadPrefab)
+        {
+            Instantiate(DeadPrefab, transform.position, transform.rotation);
+        }
     }
 }

@@ -54,9 +54,6 @@
     <Reference Include="UnityEngine.UI">
       <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
     </Reference>
@@ -66,13 +63,16 @@
     <Compile Include="Assets\BotMovement.cs" />
     <Compile Include="Assets\Enemies\EnemySpawner.cs" />
     <Compile Include="Assets\EnemiesDestroyedText.cs" />
+    <Compile Include="Assets\EnemyGun.cs" />
     <Compile Include="Assets\Extensions.cs" />
     <Compile Include="Assets\GroundDetector.cs" />
+    <Compile Include="Assets\HUD\ClickToAdvance.cs" />
     <Compile Include="Assets\Health.cs" />
     <Compile Include="Assets\ParticleSystemAutoDestroy.cs" />
     <Compile Include="Assets\Player\PlayerAim.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\PlayerHealthBar.cs" />
+    <Compile Include="Assets\ScaleNormalizer.cs" />
     <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\WaveManager.cs" />
     <Compile Include="Assets\Weapons\BulletController.cs" />

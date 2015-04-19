@@ -16,14 +16,17 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        var enemy = (GameObject)Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
-        var health = enemy.GetComponent<Health>();
-        health.OnDie += enemy_OnDie;
-        if (Inverted)
+        if (GameObject.FindGameObjectWithTag("Player"))
         {
-            var scale = enemy.transform.localScale;
-            scale.x *= -1;
-            enemy.transform.localScale = scale;
+            var enemy = (GameObject)Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
+            var health = enemy.GetComponent<Health>();
+            health.OnDie += enemy_OnDie;
+            if (Inverted)
+            {
+                var scale = enemy.transform.localScale;
+                scale.x *= -1;
+                enemy.transform.localScale = scale;
+            }
         }
     }
 

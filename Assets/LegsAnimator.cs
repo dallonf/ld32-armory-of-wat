@@ -5,6 +5,7 @@ public class LegsAnimator : MonoBehaviour
 {
     public AnimationClip Stand;
     public AnimationClip Walk;
+    public AnimationClip Air;
     public float NormalWalkingSpeed = 45;
 
     private Rigidbody2D rigidbody2d;
@@ -42,16 +43,24 @@ public class LegsAnimator : MonoBehaviour
 
         if (!Mathf.Approximately(0, velocityX) && isOnGround)
         {
-            if (currentAnimationClip == Stand)
+            if (currentAnimationClip != Walk)
             {
                 currentAnimationClip = Walk;
                 animator.Play(Walk.name);
             }
             animator.speed = Mathf.Abs(velocityX) / NormalWalkingSpeed;
         }
+        else if (!isOnGround)
+        {
+            if (currentAnimationClip != Air)
+            {
+                currentAnimationClip = Air;
+                animator.Play(Air.name);
+            }
+        }
         else
         {
-            if (currentAnimationClip == Walk)
+            if (currentAnimationClip != Stand)
             {
                 currentAnimationClip = Stand;
                 animator.Play(Stand.name);

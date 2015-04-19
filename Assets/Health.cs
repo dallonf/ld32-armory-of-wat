@@ -6,12 +6,15 @@ public class Health : MonoBehaviour
     public int MaxHealth = 100;
     public int CurrentHealth;
     public SpriteRenderer[] Sprites;
+    public AudioClip HurtSound;
 
     private bool isInvulnerable = false;
 
     public int FlashTimes = 5;
     public float FlashFrequency = 0.1f;
     public float FlashAlpha = 0.5f;
+
+    private AudioSource audioSource;
 
     public event System.Action OnTakeDamage;
     public event System.Action OnDie;
@@ -20,12 +23,17 @@ public class Health : MonoBehaviour
     void Awake()
     {
         CurrentHealth = MaxHealth;
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void TakeDamage(int amount)
     {
         if (isInvulnerable) return;
         CurrentHealth -= amount;
+        if (HurtSound)
+        {
+            audioSource.PlayOneShot(HurtSound);
+        }
         if (OnTakeDamage != null) OnTakeDamage();
         if (CurrentHealth <= 0)
         {

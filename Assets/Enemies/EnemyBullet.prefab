@@ -73,6 +73,7 @@ MonoBehaviour:
   Damage: 10
   Speed: 15
   TTL: 2
+  ImpactEffect: {fileID: 166292, guid: 1ad7293dc099428408c2a32a871ff7c6, type: 2}
   DamageEnemies: 0
 --- !u!212 &21298804
 SpriteRenderer:

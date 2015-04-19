@@ -6,6 +6,7 @@ public class BulletController : MonoBehaviour
     public int Damage = 40;
     public float Speed = 30f;
     public float TTL = 2;
+    public GameObject ImpactEffect;
 
     public bool DamageEnemies = true;
 
@@ -27,6 +28,7 @@ public class BulletController : MonoBehaviour
         
         if (!collision.gameObject.CompareTag("Platform"))
         {
+            Instantiate(ImpactEffect, transform.position, transform.rotation);
             Destroy(gameObject);
         }
         

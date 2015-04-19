@@ -7,12 +7,15 @@ public class EnemyGun : MonoBehaviour
     public float FireDelay = 0.2f;
     public int BurstCount = 3;
     public float TimeBetweenBursts = 1;
+    public AudioClip FireSound;
 
     private Transform firePoint;
+    private AudioSource audioSource;
 
     void Awake()
     {
         firePoint = transform.FindChild("fire-point");
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Start()
@@ -22,16 +25,14 @@ public class EnemyGun : MonoBehaviour
 
     private IEnumerator Shooting()
     {
+        yield return new WaitForSeconds(Random.Range(0, 0.5f));
         while (true)
         {
             yield return new WaitForSeconds(TimeBetweenBursts);
             for (int i = 0; i < BurstCount; i++)
             {
                 var rotation = firePoint.rotation;
-                //if (transform.localScale.x < 0)
-                //{
-                //    rotation *= Quaternion.AngleAxis(180, Vector3.forward);
-                //}
+                audioSource.PlayOneShot(FireSound);
                 var bullet = (GameObject)Instantiate(BulletPrefab, firePoint.position, rotation);
                 
                 Physics2D.IgnoreCollision(transform.parent.parent.GetComponent<Collider2D>(), bullet.GetComponent<Collider2D>());

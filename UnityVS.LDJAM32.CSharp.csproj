@@ -72,6 +72,7 @@
     <Compile Include="Assets\Player\PlayerAim.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />
     <Compile Include="Assets\PlayerHealthBar.cs" />
+    <Compile Include="Assets\RemoveAfterTime.cs" />
     <Compile Include="Assets\ScaleNormalizer.cs" />
     <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\WaveManager.cs" />

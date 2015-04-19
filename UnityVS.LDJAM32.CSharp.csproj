@@ -78,6 +78,7 @@
     <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\TGunController.cs" />
     <Compile Include="Assets\WaveManager.cs" />
+    <Compile Include="Assets\WeaponSelector.cs" />
     <Compile Include="Assets\Weapons\BulletController.cs" />
     <Compile Include="Assets\Weapons\ClickToLaunch.cs" />
     <Compile Include="Assets\Weapons\MetaGunController.cs" />

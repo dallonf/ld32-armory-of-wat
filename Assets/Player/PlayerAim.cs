@@ -21,7 +21,7 @@ public class PlayerAim : MonoBehaviour
             diff = mousePositionInWorld - (Vector2)transform.position;
         }
 
-        if (diff.x < -1)
+        if (mousePositionInWorld.x < transform.position.x)
         {
             transform.localScale = new Vector3(1, -1, 1);
         }

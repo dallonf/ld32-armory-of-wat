@@ -21,6 +21,15 @@ public class PlayerAim : MonoBehaviour
             diff = mousePositionInWorld - (Vector2)transform.position;
         }
 
+        if (diff.x < -1)
+        {
+            transform.localScale = new Vector3(1, -1, 1);
+        }
+        else
+        {
+            transform.localScale = Vector3.one;
+        }
+
         var angle = AngleMath.VectorToAngle2D(diff);
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }

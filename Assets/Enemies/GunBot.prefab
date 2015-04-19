@@ -115,7 +115,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169960}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.5337515, y: -.73384285, z: 0}
+  m_LocalPosition: {x: -.0114138126, y: 15.0838995, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 449668}
@@ -265,9 +265,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 141528, guid: 2cd7315342a6abc4a8ac8ff8b5500fe3, type: 2}
-  FireDelay: .200000003
-  BurstCount: 3
-  TimeBetweenBursts: 1
+  FireDelay: 0
+  BurstCount: 1
+  TimeBetweenBursts: 2
   FireSound: {fileID: 8300000, guid: fe45ea38ea15fb343917ae774cc604a8, type: 3}
 --- !u!114 &11468910
 MonoBehaviour:

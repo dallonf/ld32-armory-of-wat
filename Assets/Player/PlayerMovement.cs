@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public float Speed = 30;
+    public float MidAirControlSpeed = 15;
     public float Deceleration = 0.1f;
     public float MaxJumpTime = 0.25f;
     public float JumpForce = 10;
@@ -43,7 +44,15 @@ public class PlayerMovement : MonoBehaviour
 
         float horizontal = Input.GetAxis("Horizontal");
 
-        rigidbody2d.AddForce(new Vector2(horizontal * Speed, 0));
+        if (isOnGround)
+        {
+            rigidbody2d.AddForce(new Vector2(horizontal * Speed, 0));
+        }
+        else
+        {
+            rigidbody2d.AddForce(new Vector2(horizontal * MidAirControlSpeed, 0));
+        }
+        
 
         // Decelerate for better control
         if (isOnGround && Mathf.Approximately(horizontal, 0))

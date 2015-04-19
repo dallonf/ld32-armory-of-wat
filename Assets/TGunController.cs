@@ -14,6 +14,7 @@ public class TGunController : MonoBehaviour
     private AudioSource audioSource;
 
     private float cooldownRemaining = 0;
+    private bool togglePoint = false;
 
     public void Awake()
     {
@@ -26,11 +27,12 @@ public class TGunController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && cooldownRemaining <= 0)
         {
-            Transform launchPoint = Random.value > 0.5f ? LaunchPoint1 : LaunchPoint2;
+            Transform launchPoint = togglePoint ? LaunchPoint1 : LaunchPoint2;
             var bullet = (GameObject)GameObject.Instantiate(BulletPrefab, launchPoint.position, launchPoint.rotation);
             Physics2D.IgnoreCollision(playerCollider, bullet.GetComponent<Collider2D>());
             audioSource.PlayOneShot(ShootSound);
             cooldownRemaining = CooldownTime;
+            togglePoint = !togglePoint;
         }
 
         if (cooldownRemaining > 0)

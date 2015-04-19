@@ -1510,7 +1510,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31430fc27a2bc6e488265a98b1e53b53, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &783664471
 Transform:
   m_ObjectHideFlags: 0
@@ -1593,7 +1593,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31430fc27a2bc6e488265a98b1e53b53, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &869480375
 Transform:
   m_ObjectHideFlags: 0
@@ -1844,7 +1844,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31430fc27a2bc6e488265a98b1e53b53, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &981743715
 Transform:
   m_ObjectHideFlags: 0
@@ -2413,11 +2413,13 @@ MonoBehaviour:
   - {fileID: 541914317}
   - {fileID: 973595380}
   - {fileID: 460062103}
+  - {fileID: 1852133741}
+  - {fileID: 1298713650}
   HurtSound: {fileID: 8300000, guid: 28216be0be799e943b5e770a079cff60, type: 3}
   DeadPrefab: {fileID: 0}
   FlashTimes: 5
   FlashFrequency: .100000001
-  FlashAlpha: .5
+  FlashAlpha: .200000003
 --- !u!4 &1289208237
 Transform:
   m_ObjectHideFlags: 0
@@ -4127,7 +4129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31430fc27a2bc6e488265a98b1e53b53, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &1625865276
 Transform:
   m_ObjectHideFlags: 0
@@ -4210,7 +4212,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 31430fc27a2bc6e488265a98b1e53b53, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
 --- !u!4 &1764997959
 Transform:
   m_ObjectHideFlags: 0
@@ -4446,6 +4448,18 @@ Prefab:
     - target: {fileID: 491490, guid: b8e731ed79d79a9458b5e467535aff7d, type: 2}
       propertyPath: m_RootOrder
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 21236596, guid: b8e731ed79d79a9458b5e467535aff7d, type: 2}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21236596, guid: b8e731ed79d79a9458b5e467535aff7d, type: 2}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21236596, guid: b8e731ed79d79a9458b5e467535aff7d, type: 2}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8e731ed79d79a9458b5e467535aff7d, type: 2}

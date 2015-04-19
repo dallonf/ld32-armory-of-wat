@@ -68,6 +68,7 @@
     <Compile Include="Assets\GroundDetector.cs" />
     <Compile Include="Assets\HUD\ClickToAdvance.cs" />
     <Compile Include="Assets\Health.cs" />
+    <Compile Include="Assets\InstructionText.cs" />
     <Compile Include="Assets\ParticleSystemAutoDestroy.cs" />
     <Compile Include="Assets\Player\PlayerAim.cs" />
     <Compile Include="Assets\Player\PlayerMovement.cs" />

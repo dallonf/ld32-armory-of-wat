@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
     public GameObject EnemyPrefab;
     public float StartTime = 1;
     public float Time = 5;
+    public int MinEnemiesDestroyed = 5;
     public bool Inverted;
 
     // Use this for initialization
@@ -16,7 +17,7 @@ public class EnemySpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
-        if (GameObject.FindGameObjectWithTag("Player"))
+        if (GameObject.FindGameObjectWithTag("Player") && ScoreManager.Instance.EnemiesDestroyed >= MinEnemiesDestroyed)
         {
             var enemy = (GameObject)Instantiate(EnemyPrefab, transform.position, Quaternion.identity);
             var health = enemy.GetComponent<Health>();

@@ -10,8 +10,8 @@ public class DamageAtVelocity : MonoBehaviour
     public int Damage = 50;
 
     private float timeSinceStart = 0;
-    private float timeSinceCollision = 0;
-    private bool hasCollided = false;
+    //private float timeSinceCollision = 0;
+    //private bool hasCollided = false;
 
     private bool isDamaging = false;
 
@@ -68,7 +68,7 @@ public class DamageAtVelocity : MonoBehaviour
         isDamaging = true;
         ParticleSystemWhenDamaging.enableEmission = true;
         timeSinceStart = 0;
-        timeSinceCollision = 0;
-        hasCollided = false;
+        //timeSinceCollision = 0;
+        //hasCollided = false;
     }
 }
